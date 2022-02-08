@@ -1,6 +1,4 @@
-
 import random
-from re import L
 import mysql
 import mysql.connector
 from mysql.connector import Error
@@ -90,7 +88,6 @@ class Banking:
             from users import secret
             secret.check()
             
-
         except Error as e:
             print(e)
     def chkblnce():
@@ -120,8 +117,6 @@ class Banking:
 
         except Error as e:
             print(e)
-    
-
 
 print("Welcome to banking management system:")
 print("1.Create a new account")
@@ -144,4 +139,3 @@ elif(n==5):
 elif(n==6):
     print("Thank you for banking with us!")
     exit()
-

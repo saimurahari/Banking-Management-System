@@ -1,10 +1,8 @@
 import mysql
 import mysql.connector
 from mysql.connector import Error
-from prettytable import PrettyTable
 import re
 import getpass
-
 
 class Register:
     def __init__(self,username,email,mobile,password,confirmpassword):
@@ -13,8 +11,6 @@ class Register:
         self.mobile = mobile
         self.password = password
         self.confirmpassword= confirmpassword
-
-
     
     def register(self):
         #for a new user register here1
@@ -29,8 +25,7 @@ class Register:
                 mycursor.execute("insert into register values(%s,%s,%s,%s,%s);",(self.username,self.email,self.mobile,self.password,self.confirmpassword))
                 mydb.commit()
                 mydb.close
-                print("successfully registered")
-                
+                print("successfully registered")                
 
         except Error as e:
             print(e)
@@ -63,7 +58,6 @@ class Login:
         print("#---------------------Welcome to Banking Management System-------------------------#")
         from Banking import Banking
 
-
 print("Hello Welcome! to Banking management system")
 print("1.Login")
 print("2.Register")
@@ -79,8 +73,6 @@ if(n==1):
     password = getpass.getpass("Enter Password")
     s1 = Login(email,password)
     s1.login()
-    
-    
 
 elif(n==2):
     username = input("Enter your username:\n")
